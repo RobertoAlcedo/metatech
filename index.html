@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carga de fotos</title>
+  </head>
+  <body>
+    <form>
+      <label for="foto">Selecciona una foto:</label>
+      <input type="file" id="foto" name="foto">
+    </form>
+    <div>
+      <img id="vista-previa">
+    </div>
+    <script>
+      const inputFoto = document.getElementById("foto");
+      const vistaPrevia = document.getElementById("vista-previa");
+
+      inputFoto.addEventListener("change", () => {
+        const archivo = inputFoto.files[0];
+        if (archivo) {
+          const lector = new FileReader();
+          lector.readAsDataURL(archivo);
+          lector.onload = () => {
+            vistaPrevia.src = lector.result;
+          };
+        }
+      });
+    </script>
+  </body>
+</html>
