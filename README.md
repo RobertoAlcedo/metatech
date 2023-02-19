@@ -1,5 +1,3 @@
 # metatech
 NuevaRepositorio
-Segundo Intentto
-
-Probando
+Proyecto Metatech V1
